@@ -1,16 +1,90 @@
+<!DOCTYPE html>
 <html>
     <head>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="script.js"></script>
+      <link rel="stylesheet" href="style.css">
+      <style>
+
+/* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+/* Firefox */
+        input[type=number] {
+          -moz-appearance: textfield;
+        }
+      </style>
+      
+      <title>Simple Interest Calculator</title>
+      
     </head>
-    <body>
+    
+    <div class=maindiv>
+      <body>
+      
         <h1>Simple Interest Calculator</h1>
+             
+        <!-- It seemed best to place the elements of this calulator in an unbordered table for alignment purposes.-->
+        <table>
+          <tr>
+            <td>Amount</td>
+            <td><input type="number" id="principal" min=0 max="9999999999999999999"required></td>
+          </tr>
+  
+            <!--It doesn't make sense to allow the scroller to decrease past $1 into negative integers, based on the nature of the calculator. I believe increments, maybe 100, may be appropriate here. 
 
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
+            Although I have removed the scroll, the functionality remains. The UI is more modern without the scroll, yet practicality isn't impacted. When a number is entered, the arrow keys can be used to step the number up or down.
 
-        <button onclick="compute()">Compute</button>
-    </body>
+            I believe it would be best to include "$" before the text input box or left inside of the box-->
+       
+         <tr> 
+           <td>Interest Rate</td>
+           <td>
+             <input type="range"  id="rate" min="1" max="20" step="0.25" value="10.25"onchange="updateRate()">
+             <!--I believe that the oninput event would be a more appropriate trigger for this calculator. Oninput would show the selected interest rate in a real-time as the user slides along the range. With onchange, the numeric value does not reflect the value of slider until the user releases the button.-->
+             <span id="rate_val">10.25%</span>
+           </td> 
+       
+         </tr>      
+         <tr>
+           <td>No. of Years </td> 
+           <td>
+             <select id="years" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                </select></td>
+         </tr>
+         <tr>
+           <td>
+             <button onclick="compute()">Compute Interest</button>
+           </td>
+         </tr>
+         <tr>
+           <td colspan="2"> 
+             <span id="result"></span>
+           </td>
+         </tr>
+       </table> <br/>
+          
+     </body>
+        <!--Moved the footer inside of maindiv to maintains it's presence inside of the calculator's white space, as shown in the sample/example. -->
+        <footer>
+
+        &#169; Everyone Can Get Rich
+        
+        </footer>   
+    </div>
+ 
 </html>

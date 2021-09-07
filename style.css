@@ -1,4 +1,38 @@
-body {background-color:tan;}
-h1{color:green;}
+body {
+  background-color: black;
+  font-family: arial;
+  color: white
+}
 
+h1 {
+  color: grey;
+  font-family: verdana
+}
 
+.maindiv {
+  background-color: white;
+  color: black;
+  width: 500px;
+  /* Changed the width to 500px to keep the h1 text from wrapping*/
+  padding: 20px;
+  border-radius: 25px;
+  margin: auto
+} 
+body {
+  text-align:center
+}
+footer {
+  text-align:left
+}
+table {
+  width:70%;
+  margin:auto
+  
+}
+td {
+  text-align:left;
+ 
+}
+tr {
+  height:28px
+}

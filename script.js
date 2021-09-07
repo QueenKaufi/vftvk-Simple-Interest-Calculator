@@ -9,11 +9,14 @@ var output= document.getElementById("rate_val");
 
 
 function updateRate(){
+var slider= document.getElementById("rate");
 output.innerHTML=slider.value + "%"
 	 }
    
 function compute(){
-
+var principal = document.getElementById("principal");
+var years = document.getElementById("years");
+var rate = document.getElementById("rate");
 var interest = principal.value * years.value * rate.value /100;
 var futureyear = new Date().getFullYear()+parseInt(years.value);
 

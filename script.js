@@ -9,6 +9,7 @@ var output= document.getElementById("rate_val");
 
 
 function updateRate(){
+var output= document.getElementById("rate_val");
 var slider= document.getElementById("rate");
 output.innerHTML=slider.value + "%"
 	 }

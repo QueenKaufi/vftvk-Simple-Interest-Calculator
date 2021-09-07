@@ -20,6 +20,8 @@ var years = document.getElementById("years");
 var rate = document.getElementById("rate");
 var interest = principal.value * years.value * rate.value /100;
 var futureyear = new Date().getFullYear()+parseInt(years.value);
+var result = document.getElementById("result")
+
 
 if(principal.value <= 0){
         alert("Enter a positive number")
